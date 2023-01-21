@@ -54,7 +54,7 @@ void bucketSort(int* a, int n, int m, int size) {
 } 
 
 int main() {
-	/*Heap* h = new Heap();
+	Heap* h = new Heap();
 	h->add(5, "a");
 	h->add(3, "a");
 	h->add(4, "a");
@@ -66,7 +66,7 @@ int main() {
 	h->add(7, "a");
 	h->print();
 	h->heapSort();
-	h->print();*/
+	h->print();
 
 
 	

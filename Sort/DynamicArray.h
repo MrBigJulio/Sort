@@ -23,11 +23,9 @@ public:
 	void swap(int*, int*);
 	void sort();
 	void info();
-
-	void bubbleSort();
 	void print() {
 		for (int i = 0; i < numberOfRecords; i++) {
-			cout << *(ar + i) << endl;
+			cout << ar[i] << endl;
 		}
 		cout << endl;
 	}
@@ -44,7 +42,7 @@ Array::Array(const Array& obj) {
 	numberOfRecords = obj.numberOfRecords;
 	ar = new int[arraySize];
 	for (int i = 0; i < arraySize; i++) {
-		*(ar + i) = *(obj.ar + i);
+		ar[i] = obj.ar[i];
 	}
 }
 
@@ -56,11 +54,11 @@ void Array::resize() {
 	ar = new int[arraySize];
 	for (int i = 0; i < arraySize; i++) {
 		if (i < copyArray->arraySize) {
-			*(ar + i) = *(copyArray->ar + i);
+			ar[i] = copyArray->ar[i];
 		}
 		else
 		{
-			*(ar + i) = 0;
+			ar[i] = 0;
 		}
 	}
 	delete copyArray;
@@ -69,7 +67,7 @@ void Array::resize() {
 void Array::add(int record) {
 	if (numberOfRecords >= arraySize)
 		resize();
-	*(ar + numberOfRecords) = record;
+	ar[numberOfRecords] = record;
 	numberOfRecords++;
 };
 
@@ -78,19 +76,19 @@ void Array::print(int index) {
 		cout << "Error! Out of range!" << endl;
 	}
 	else 
-		cout <<  *(ar + index) << endl;
+		cout <<  ar[index] << endl;
 }
 
 void Array::edit(int index, int record) {
 	if (index >= numberOfRecords)
 		cout << "Error! Out of range!" << endl;
 	else
-		*(ar + index) = record;
+		ar[index] = record;
 }
 
 void Array::clear() {
 	for (int i = 0; i < numberOfRecords; i++) {
-		*(ar + i) = 0;
+		ar[i] = 0;
 	}
 	numberOfRecords = 0;
 }
