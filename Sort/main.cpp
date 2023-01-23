@@ -34,8 +34,9 @@ void Heap::heapSort() {
 	}
 }
 
-void bucketSort(int* a, int n, int m, int size) {
-	int w = m / n;
+void bucketSort(int* a, int m, int size) {
+	int n = sqrt(size);
+	double w = double(m) / n;
 	Array *buckets = new Array[n];
 	for (int i = 0; i < size; i++) {
 		int bucketIndex = floor(a[i] / w);
@@ -54,7 +55,7 @@ void bucketSort(int* a, int n, int m, int size) {
 } 
 
 int main() {
-	Heap* h = new Heap();
+	/*Heap* h = new Heap();
 	h->add(5, "a");
 	h->add(3, "a");
 	h->add(4, "a");
@@ -66,7 +67,7 @@ int main() {
 	h->add(7, "a");
 	h->print();
 	h->heapSort();
-	h->print();
+	h->print();*/
 
 
 	
@@ -75,7 +76,14 @@ int main() {
 	
 	countingSort(a, 20, 90);
 	int b = sizeof(a) / sizeof(int);
-	bucketSort(c, 5, 90, b);
+	bucketSort(c, 90, b);
 
-
+	/*int  a = 20;
+	double b = 1.0 /a;
+	cout << b;
+	
+	double c = floor(0.12 / b);
+	
+	double d = floor(sqrt(5));
+	cout << d;*/
 }
